@@ -10,7 +10,7 @@ export default function Home({ data }) {
         <h2 style={styles.subHeading}>Discover The Best Tours</h2>
         <div style={styles.cardsInner}>
           {data.map((event) => {
-            return <Card event={event} />;
+            return <Card key={event.id} event={event} />;
           })}
         </div>
       </div>

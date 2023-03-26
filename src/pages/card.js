@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 function Card({ event, comingFrom }) {
-  console.log(comingFrom)
+
   return (
     <div style={styles.card}>
       <img src={event.image} style={styles.img} />

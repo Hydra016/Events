@@ -13,7 +13,7 @@ function Category({ data }) {
       <div style={styles.cards}>
         <div style={styles.cardsInner}>
           {data.map((event) => {
-            return <Card event={event} comingFrom="cat" />;
+            return <Card key={event.id} event={event} comingFrom="cat" />;
           })}
         </div>
       </div>
