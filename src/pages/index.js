@@ -13,7 +13,7 @@ export default function Home({ data }) {
         <h2 style={styles.subHeading}>Discover The Best Tours</h2>
         <div style={styles.cardsInner}>
           {data.map((event) => {
-            return <Card key={event.id} event={event} />;
+            return <Card key={event.id} event={event} comingFrom='main' />;
           })}
         </div>
       </div>
@@ -49,7 +49,6 @@ const styles = {
 
 export const getServerSideProps = async () => {
   const { events_categories } = await import("/data/data.json");
-  console.log(events_categories);
   return {
     props: {
       data: events_categories,

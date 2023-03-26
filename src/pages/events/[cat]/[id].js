@@ -38,7 +38,6 @@ function SinglePage({ data }) {
     }
     setTimeout(() => {
       setMsg('')
-      console.log(msg)
     }, 5000);
   }
 

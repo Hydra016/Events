@@ -2,25 +2,26 @@ import React from "react";
 import Link from "next/link";
 
 function Card({ event, comingFrom }) {
-
-  return (
-    <div style={styles.card}>
-      <img src={event.image} style={styles.img} />
-      <div style={styles.cardContent}>
-        <div style={styles.cardText}>
-          <h1 style={styles.cardHeading}>{event.id}</h1>
-          <h3>{event.title}</h3>
-          <h4>{event.description}</h4>
+  if(event) {
+    return (
+      <div style={styles.card}>
+        <img src={event.image} style={styles.img} />
+        <div style={styles.cardContent}>
+          <div style={styles.cardText}>
+            <h1 style={styles.cardHeading}>{event.id}</h1>
+            <h3>{event.title}</h3>
+            <h4>{event.description}</h4>
+          </div>
+          {comingFrom === 'cat'? <Link passHref style={styles.cardButton} href={`/events/${event.city}/${event.id}`}>
+            View Event
+          </Link> : <Link passHref style={styles.cardButton} href={`/events/${event.id}`}>
+            View Event
+          </Link>}
+          
         </div>
-        {comingFrom ? <Link passHref style={styles.cardButton} href={`/events/${event.city}/${event.id}`}>
-          View Event
-        </Link> : <Link passHref style={styles.cardButton} href={`/events/${event.id}`}>
-          View Event
-        </Link>}
-        
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 const styles = {
