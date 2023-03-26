@@ -14,7 +14,7 @@ const styles = {
         background: "linear-gradient(#663a82, #7c5295)",
         color: '#FFF',
         padding: 50,
-        marginTop: 30
+        marginTop: 80
     }
 }
 
